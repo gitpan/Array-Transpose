@@ -1,9 +1,14 @@
-MANIFEST
-README
-LICENSE
-Todo
 Changes
-Makefile.PL
 lib/Array/Transpose.pm
+LICENSE
+Makefile.PL
+MANIFEST
+MANIFEST.SKIP
+README
+scripts/Array-Transpose-example.pl
 t/001_load.t
+t/002_load.t
+t/pod.t
+t/pod-coverage.t
+Todo
 META.yml                                 Module meta-data (added by MakeMaker)

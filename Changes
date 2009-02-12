@@ -1,6 +1,6 @@
 Revision history for Perl module Array::Transpose
 
-0.01 Sat Jul 12 13:55:43 2008
+0.02 2009-02-12T05:12:13Z
+  - Updated package for Kwalitee tests
+0.01 2008-07-12T18:55:43Z
     - original version; created by ExtUtils::ModuleMaker 0.51
-
-
