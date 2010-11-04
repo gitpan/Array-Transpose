@@ -24,7 +24,7 @@ print  "Output\n";
 printf "Rows: %s, Columns: %s\n", scalar(@output), scalar(@{$output[0]});
 printf "%s\n", join(" ", @$_) foreach @output;
 
-=head2 OUTPUT
+=head1 OUTPUT
 
   Input
   Rows: 4, Columns: 3
