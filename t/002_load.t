@@ -1,6 +1,7 @@
 # -*- perl -*-
+use strict;
+use warnings;
 use Test::More tests => 14;
-#BEGIN { use_ok( 'Array::Transpose qw{}' ); }
 use Array::Transpose qw{};
 my @in=(
         [qw{1 2 3 4 5}],

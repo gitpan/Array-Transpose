@@ -5,7 +5,7 @@ use warnings;
 BEGIN {
     use Exporter ();
     use vars qw($VERSION @ISA @EXPORT);
-    $VERSION     = '0.05';
+    $VERSION     = '0.06';
     @ISA         = qw(Exporter);
     @EXPORT      = qw(transpose);
 }
@@ -81,14 +81,24 @@ Returns a transposed 2-Dimensional Array given a 2-Dimensional Array
 =cut
 
 sub transpose {
+  die("Error: Expecting a single parameter")
+    unless @_ == 1;
   my $in=shift;  #[[],[],[]]
-  my $cols=scalar(@{$in->[0]}) || 0;
+  die("Error: Expecting parameter to be an array reference")
+    unless ref($in) eq "ARRAY";
   my @out=();
-  foreach my $col (0 .. $cols-1) {
-    push @out, [map {$_->[$col]} @$in];
+  if (@$in > 0) {
+    my $cols=scalar(@{$in->[0]}) || 0;
+    foreach my $col (0 .. $cols-1) {
+      push @out, [map {$_->[$col]} @$in];
+    }
   }
   return wantarray ? @out : \@out
 }
+
+=head1 LIMITATIONS
+
+The transpose function assumes all rows have the same number of columns as the first row.
 
 =head1 BUGS
 
@@ -116,7 +126,13 @@ The full text of the license can be found in the LICENSE file included with this
 
 =head1 SEE ALSO
 
-L<Math::MatrixReal> method transpose, L<Array::Transpose::Ragged>
+=head2 Similar Capabilities
+
+L<Math::MatrixReal> method transpose, L<Data::Table> rotate method
+
+=head2 Packages built on top of this package
+
+L<Array::Transpose::Ragged>
 
 =cut
 

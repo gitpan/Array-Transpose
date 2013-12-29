@@ -1,4 +1,6 @@
 # -*- perl -*-
+use strict;
+use warnings;
 use Test::More tests => 33;
 BEGIN { use_ok( 'Array::Transpose' ); }
 my @in=(
